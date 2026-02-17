@@ -3,6 +3,9 @@
     --secondary-color: #263143;
     --terciary-color: #13172b;
 
+    --card-bg-color: #263143;
+    --input-bg-color: #13172b;
+
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
@@ -62,6 +65,10 @@ button.primary:hover {
     :root {
         color: var(--terciary-color);
         background-color: #ffffff;
+
+
+        --card-bg-color: lightgrey;
+        --input-bg-color: grey;
     }
 
     a:hover {

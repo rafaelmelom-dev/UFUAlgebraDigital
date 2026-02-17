@@ -1,6 +1,6 @@
 function EntradaTransformacaoLinear({ n, x, y, z, onChangeX, onChangeY, onChangeZ }) {
     const style = {
-        backgroundColor: "var(--secondary-color)",
+        backgroundColor: "var(--card-bg-color)",
         paddingLeft: "2rem",
         paddingRight: "2rem",
         paddingTop: "0.5rem",
@@ -16,7 +16,7 @@ function EntradaTransformacaoLinear({ n, x, y, z, onChangeX, onChangeY, onChange
         fontSize: "2rem",
         width: "10ch",
         boxSizing: "content-box",
-        backgroundColor: "var(--terciary-color)",
+        backgroundColor: "var(--input-bg-color)",
         borderRadius: "10px",
         border: "1px solid #aaaaaaa0",
         outline: "none"
