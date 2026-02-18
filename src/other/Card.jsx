@@ -18,7 +18,7 @@ const styles = {
         flexDirection: "column",
         height: "100%",
         padding: "1.5rem",
-        border: "1px solid lightgrey",
+        border: "1px solid var(--card-bg-color)",
     },
     content: {
         flex: "1",

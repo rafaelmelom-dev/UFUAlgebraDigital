@@ -68,7 +68,7 @@ button.primary:hover {
 
 
         --card-bg-color: lightgrey;
-        --input-bg-color: grey;
+        --input-bg-color: #c1c1c1;
     }
 
     a:hover {
