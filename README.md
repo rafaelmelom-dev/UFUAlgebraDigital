@@ -57,7 +57,7 @@ Cerifique-se de que o [Node.js](https://nodejs.org/) esteja instalado.
    npm run dev
    ```
 
-Agora acesse [http://localhost:5173](http://localhost:5173) no seu navegador.
+   Agora acesse [http://localhost:5173](http://localhost:5173) no seu navegador.
 
 ## Autor
 
