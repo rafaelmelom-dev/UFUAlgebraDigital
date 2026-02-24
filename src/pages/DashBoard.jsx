@@ -6,10 +6,14 @@ import MatrixDisplay from "../other/MatrixDisplay";
 import Card from "../other/Card";
 import Properties from "../other/Properties";
 import Operations from "../other/Operations";
+import { multiplicarMatrizes, somaMatriz } from "../core/matrix/operations";
 
 function Dashboard() {
   const navigate = useNavigate();
+
   const [isMobile, setIsMobile] = useState(false);
+  const [toggleMatrix, setToggleMatrix] = useState(true);
+
   const location = useLocation();
   const { t1, t2 } = location.state || {};
 
@@ -170,12 +174,70 @@ function Dashboard() {
                 <div
                   style={{
                     display: "flex",
-                    flexDirection: "row",
+                    flexDirection: isMobile ? "column" : "row",
                     flexGrow: "1",
+                    gap: isMobile ? "2rem" : "0",
+                    // flexWrap: "wrap",
                   }}
                 >
-                  <MatrixDisplay matrix={propertiesT1?.matriz} n="1" />
-                  <MatrixDisplay matrix={propertiesT2?.matriz} n="2" />
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirecion: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "2rem",
+                    }}
+                  >
+                    <button onClick={() => setToggleMatrix(!toggleMatrix)}>
+                      Trocar ↺
+                    </button>
+                  </div>
+                  {toggleMatrix ? (
+                    <>
+                      <MatrixDisplay
+                        matrix={propertiesT1?.matriz}
+                        name={
+                          <>
+                            T<sub>1</sub>
+                          </>
+                        }
+                      />
+                      <MatrixDisplay
+                        matrix={propertiesT2?.matriz}
+                        name={
+                          <>
+                            T<sub>2</sub>
+                          </>
+                        }
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <MatrixDisplay
+                        matrix={somaMatriz(
+                          propertiesT1?.matriz,
+                          propertiesT2?.matriz,
+                        )}
+                        name={
+                          <>
+                            (T<sub>1</sub> + T<sub>2</sub>)
+                          </>
+                        }
+                      />
+                      <MatrixDisplay
+                        matrix={multiplicarMatrizes(
+                          propertiesT2?.matriz,
+                          propertiesT1?.matriz,
+                        )}
+                        name={
+                          <>
+                            (T<sub>2</sub> ∘ T<sub>1</sub>)
+                          </>
+                        }
+                      />
+                    </>
+                  )}
                 </div>
               </Card>
               <Card
