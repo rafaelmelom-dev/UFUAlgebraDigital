@@ -25,6 +25,7 @@ export function extrairBaseDaMatriz(matriz) {
     if (!colunasPivos.includes(i)) colunasLivres.push(i);
   }
 
+
   // caso não haja colunas livres, a base é nula
   if (colunasLivres.length == 0) return new Array(new Array(n).fill(0));
 
@@ -38,9 +39,14 @@ export function extrairBaseDaMatriz(matriz) {
 
     return vetor;
   });
-    console.log(base);
 
-  return base;
+    const baseFormatada = base.map(arr => {
+        return arr.map(e => {
+            return +e.toFixed(4);
+        })
+    })
+
+    return baseFormatada;
 }
 
 export function calcularBaseAutovetores(matriz, autovalor) {
@@ -65,6 +71,7 @@ export function calcularBaseAutovetores(matriz, autovalor) {
   const matrizEscalonada = escalonar(matrizCopia);
   const base = extrairBaseDaMatriz(matrizEscalonada);
 
+
   return base;
 }
 
@@ -76,6 +83,5 @@ export function calcularNucleo(matriz) {
   const matrizEscalonada = escalonar(matriz);
   const base = extrairBaseDaMatriz(matrizEscalonada);
 
-    console.log(base);
   return base;
 }

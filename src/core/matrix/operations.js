@@ -47,7 +47,5 @@ export function multiplicarMatrizes(matrizA, matrizB) {
         })
     })
 
-    console.log("m", matrizC);
-
   return matrizC;
 }
